@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -9,8 +9,8 @@ import { CreateArticleDto } from './create-article.dto';
 export class UpdateArticleDto extends PartialType(CreateArticleDto) {
   @ApiProperty()
   @IsBoolean()
-  @IsNotEmpty()
-  featured: boolean;
+  @IsOptional()
+  featured?: boolean;
 
   @ApiProperty()
   @IsString()

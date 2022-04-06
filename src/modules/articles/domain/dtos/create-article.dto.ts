@@ -4,6 +4,7 @@ import {
   IsArray,
   IsBoolean,
   IsNotEmpty,
+  IsOptional,
   IsString,
   ValidateNested
 } from 'class-validator';
@@ -15,8 +16,8 @@ export interface ProviderProps extends Omit<IProvider, 'id'> { }
 export class CreateArticleDto {
   @ApiProperty()
   @IsBoolean()
-  @IsNotEmpty()
-  featured: boolean;
+  @IsOptional()
+  featured?: boolean;
 
   @ApiProperty()
   @IsString()

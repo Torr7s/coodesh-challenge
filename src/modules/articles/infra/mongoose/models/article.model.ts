@@ -24,7 +24,7 @@ export class ArticleModel {
   @Prop({ type: Number, unique: true })
   id: number;
 
-  @Prop({ type: Boolean })
+  @Prop({ type: Boolean, default: false })
   featured: boolean;
 
   @Prop({ type: String })
