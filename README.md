@@ -35,7 +35,16 @@ MONGODB_DATABASE = ""
 MONGODB_URI      = mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@cluster0.ihtbf.mongodb.net/${MONGODB_DATABASE}
 ```
 
+### Configuração
 
+Adicione o seu ip e o ip do container, criado a partir do deploy com Docker, no site do [mongodb](https://cloud.mongodb.com/). Para conseguir obter o ip do container, execute o seguinte comando:
+
+
+```bash
+docker inspect coodesh_database
+```
+
+Procure pela propriedade IPAddress e copie o valor, agora, após ter feito o login, acesse "Database Access", "Add Ip Address" e cole o ip do container.
 ## Instalação
 
 Este projeto foi configurado com Docker, portanto, basta adicionar corretamente as variáveis de ambiente no seu projeto e executar os seguintes comandos:
