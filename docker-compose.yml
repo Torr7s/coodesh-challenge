@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  database:
+    container_name: coodesh_database
+    image: mongo:latest
+    networks: 
+      - coodesh_network
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGODB_DATABASE}
+    ports:
+      - 27017:27017
+    
+  app:
+    container_name: coodesh
+    build: .
+    volumes:
+      - .:/usr/app
+    ports: 
+      - 3030:3030
+      - 9229:9229
+    command: yarn start:dev
+    env_file:
+      - .env
+    networks:
+      - coodesh_network
+    depends_on:
+      - database
+
+networks:
+  coodesh_network:
+    driver: bridge
