@@ -28,10 +28,7 @@ export class CronProvider implements ICronRepository {
     this._baseUrl = process.env.BASE_URL
   }
 
-  @Cron(CronExpression.EVERY_DAY_AT_9AM, {
-    name: 'Articles sync',
-    timeZone: 'America/Sao_Paulo'
-  }) 
+  @Cron(CronExpression.EVERY_DAY_AT_9AM) 
   /* @Cron('0 9 * * *') */
   async syncArticles(): Promise<void> {
     this._logger.warn('Starting articles synchronization...')
