@@ -1,5 +1,5 @@
 import { Controller, Get, Query, Req, Res } from '@nestjs/common';
-import { ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { Request, Response } from 'express';
 
@@ -13,6 +13,8 @@ import { ListArticlesService } from './list-articles.service';
 @Controller('/articles')
 export class ListArticlesController {
   constructor(private readonly _listArticlesService: ListArticlesService) { }
+
+  @ApiOperation({ description: 'List up to 6 existing articles' })
 
   @ApiQuery({ name: 'limit', description: 'Set a limit of up to 6 articles to be found.', required: false })
 

@@ -1,5 +1,5 @@
 import { Controller, Delete, HttpCode, HttpStatus, Param, Req, Res } from '@nestjs/common';
-import { ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { Request, Response } from 'express';
 
@@ -10,10 +10,12 @@ import { DeleteArticleService } from './delete-article.service';
 export class DeleteArticleController {
   constructor(private readonly _deleteArticleService: DeleteArticleService) { }
 
+  @ApiOperation({ description: 'Delete a desired article by its id' })
+
   @ApiParam({ name: 'id', description: 'Id of an existing article to be searched for' })
 
-  @ApiResponse({ status: 200, description: 'The article has been successfully deleted.' })
-  @ApiResponse({ status: 400, description: 'No article with the given id was found.'})
+  @ApiResponse({ status: 200, description: 'The article has been successfully deleted' })
+  @ApiResponse({ status: 400, description: 'No article with the given id was found'})
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)

@@ -1,5 +1,5 @@
 import { Controller, Body, Param, Req, Res, Put } from '@nestjs/common';
-import { ApiBody, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { Request, Response } from 'express';
 
@@ -13,6 +13,8 @@ import { UpdateArticleService } from './update-article.service';
 export class UpdateArticleController {
   constructor(private readonly _updateArticleService: UpdateArticleService) { }
   
+  @ApiOperation({ description: 'Update a desired article by its id' })
+
   @ApiParam({ name: 'id', description: 'Id of an existing article to be searched for' })
   
   @ApiBody({ type: UpdateArticleDto })
