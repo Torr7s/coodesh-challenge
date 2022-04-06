@@ -4,7 +4,7 @@
   "description": "",
   "author": "",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "GPL",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -28,11 +28,13 @@
     "@nestjs/mongoose": "^9.0.3",
     "@nestjs/platform-express": "^8.4.3",
     "@nestjs/schedule": "^1.1.0",
+    "@nestjs/swagger": "^5.2.1",
     "class-validator": "^0.13.2",
     "mongoose": "^6.2.10",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "swagger-ui-express": "^4.3.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
