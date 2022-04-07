@@ -7,7 +7,7 @@ import { ArticlesRepository } from '@modules/articles/infra/repositories/article
 export class ListArticlesService {
   constructor(private readonly _repository: ArticlesRepository) { }
 
-  async perform(limit: number = 10): Promise<ArticleModel[]> {
+  async perform(limit: number = 6): Promise<ArticleModel[]> {
     if (!limit || limit && limit > 6) limit = 6
 
     const articlesData = await this._repository.list(limit)
