@@ -7,6 +7,12 @@ Este projeto foi desenvolvido baseado na api da [Space Flight News](https://api.
 - [@torr7s](https://www.github.com/torr7s)
 
 
+
+## Apresentação
+
+- [Vídeo de apresentação do projeto](https://youtu.be/Bga17aOixzU)
+
+
 ## Licença
 
 [GPL 3.0](https://github.com/Illumina/licenses/blob/master/gpl-3.0.txt)
@@ -19,6 +25,14 @@ Este projeto foi desenvolvido baseado na api da [Space Flight News](https://api.
 - NestJs
 - Mongoose
 - Swagger 
+
+
+## Funcionalidades
+
+- Temas dark e light
+- Preview em tempo real
+- Modo tela cheia
+- Multiplataforma
 
 
 ## Variáveis de Ambiente
