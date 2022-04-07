@@ -119,3 +119,12 @@ Caso queria olhar a documentação a partir do Swagger, basta rodar o servidor e
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`        | `number`   | **Obrigatório** ID do artigo desejado |
+| `featured`  | `boolean`  | **Opcional** |
+| `title`     | `string`   | **Opcional** |
+| `url`       | `string`   | **Opcional** |
+| `imageUrl`  | `string`   | **Opcional** |
+| `newsSite`  | `string`   | **Opcional** |
+| `summary`   | `string`   | **Opcional** |
+| `publishedAt` | `string` | **Opcional** |
+| `launches`  | `array`    | **Opcional** |
+| `events`    | `array`    | **Opcional** |
