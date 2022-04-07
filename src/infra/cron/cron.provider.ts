@@ -4,8 +4,6 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { Cron, CronExpression } from '@nestjs/schedule';
 
-import { ICronRepository } from './repositories/cron.interface';
-
 import { CreateArticleDto } from '@modules/articles/domain/dtos/create-article.dto';
 
 import { ArticlesRepository } from '@modules/articles/infra/repositories/articles.repository';
@@ -17,7 +15,7 @@ interface IRequest {
 }
 
 @Injectable()
-export class CronProvider implements ICronRepository {
+export class CronProvider {
   private _baseUrl: string
 
   constructor(
@@ -28,8 +26,10 @@ export class CronProvider implements ICronRepository {
     this._baseUrl = process.env.BASE_URL
   }
 
-  @Cron(CronExpression.EVERY_DAY_AT_9AM) 
-  /* @Cron('0 9 * * *') */
+  @Cron(CronExpression.EVERY_DAY_AT_9AM, { // Same as 0 09 * * * 
+    name: 'article_synchronization',
+    timeZone: 'America/Sao_Paulo'
+  })
   async syncArticles(): Promise<void> {
     this._logger.warn('Starting articles synchronization...')
 
