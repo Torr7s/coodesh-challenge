@@ -10,7 +10,7 @@ Este projeto foi desenvolvido baseado na api da [Space Flight News](https://api.
 
 ## Apresentação
 
-- [Vídeo de apresentação do projeto](https://youtu.be/Bga17aOixzU)
+- [Vídeo de apresentação do projeto](https://www.loom.com/share/88df986fc8304e1b9f376d052510c5a4)
 
 
 ## Licença
