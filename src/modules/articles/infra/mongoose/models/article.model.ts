@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import crypto from 'node:crypto';
 
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
@@ -12,15 +12,6 @@ export interface IProvider {
 
 @Schema()
 export class ArticleModel {
-  @Prop({
-    type: mongoose
-      .Schema
-      .Types
-      .String,
-    auto: true
-  })
-  _id: string;
-
   @Prop({ type: Number, unique: true })
   id: number;
 
@@ -84,5 +75,5 @@ export class ArticleModel {
 export const ArticleSchema = SchemaFactory.createForClass(ArticleModel)
 
 ArticleSchema.pre<ArticleDocument>('save', async function () {
-  if (this.isNew) this._id = uuid()
+  if (this.isNew && !this.id) this.id = crypto.randomInt(1000, 17000)
 })
