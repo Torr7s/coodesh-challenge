@@ -12,12 +12,7 @@ import { CronProvider } from './cron.provider';
     ArticlesModule,
     LoggerModule,
     HttpModule.register({
-      baseURL: process.env.BASE_URL,
-      proxy: {
-        protocol: 'http',
-        host: 'localhost',
-        port: 3030
-      }
+      baseURL: process.env.BASE_URL
     })
   ],
   providers: [CronProvider]
