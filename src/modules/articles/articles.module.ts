@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { HttpModule } from '@nestjs/axios';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import { ArticleModel, ArticleSchema } from './infra/mongoose/models/article.model';
+
 import { ArticlesRepository } from './infra/repositories/articles.repository';
 
 import { CreateArticleController } from './useCases/createArticle/create-articles.controller';
@@ -19,7 +19,6 @@ import { UpdateArticleService } from './useCases/updateArticle/update-article.se
 
 @Module({
   imports: [
-    HttpModule,
     MongooseModule.forFeature([
       {
         name: ArticleModel.name,
@@ -42,7 +41,8 @@ import { UpdateArticleService } from './useCases/updateArticle/update-article.se
     FindArticleService,
     ListArticlesService,
     UpdateArticleService
-  ]
+  ],
+  exports: [ArticlesRepository]
 })
 
 export class ArticlesModule { }
