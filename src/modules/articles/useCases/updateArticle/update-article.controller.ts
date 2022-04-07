@@ -24,8 +24,8 @@ export class UpdateArticleController {
   
   @Put(':id')
   async handle(
-    @Body() data: UpdateArticleDto,
     @Param('id') id: number,
+    @Body() data: UpdateArticleDto,
     @Req() request: Request,
     @Res() response: Response
   ): Promise<Response> {
