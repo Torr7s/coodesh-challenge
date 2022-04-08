@@ -27,14 +27,6 @@ Este projeto foi desenvolvido baseado na api da [Space Flight News](https://api.
 - Swagger 
 
 
-## Funcionalidades
-
-- Temas dark e light
-- Preview em tempo real
-- Modo tela cheia
-- Multiplataforma
-
-
 ## Variáveis de Ambiente
 
 Configure as variáveis de ambiente:
